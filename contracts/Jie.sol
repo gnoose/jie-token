@@ -10,8 +10,7 @@ contract Jie is ERC20, Ownable {
     mapping(address => bool) private lockedWallets;
 
     constructor() ERC20("Jie-Li", "Jie") {
-//        _mint(msg.sender, 1000000 * 10**18);
-        _mint(msg.sender, 1000000);
+        _mint(msg.sender, 1000000 * 10**18);
     }
 
     /**
