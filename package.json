@@ -1,35 +1,26 @@
 {
-  "name": "dice",
+  "name": "jie-token",
   "version": "1.0.0",
   "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "migrate": "truffle migrate --network testnet --reset",
-    "compile": "truffle compile --network testnet",
-    "test": "npx builder test",
-    "coverage": "npx builder coverage"
+    "build": "truffle compile",
+    "test": "truffle test",
+    "start": "truffle migrate",
+    "deploy:mainnet": "truffle migrate --network mainnet",
+    "deploy:testnet": "truffle migrate --network testnet",
+    "deploy:dev": "truffle migrate --network development",
+    "reset:testnet": "truffle migrate --network testnet --reset"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "3.4.1",
+    "@openzeppelin/contracts": "^3.4.2",
     "@openzeppelin/test-helpers": "^0.5.6",
-    "@truffle/hdwallet-provider": "^1.0.21",
-    "truffle": "^5.1.58",
-    "truffle-contract-size": "^2.0.1",
-    "truffle-flattener": "^1.4.4"
+    "@truffle/hdwallet-provider": "^1.0.43",
+    "truffle": "^5.3.7",
+    "truffle-flattener": "^1.5.0"
   },
   "devDependencies": {
-    "@nomiclabs/buidler": "^1.4.7",
-    "@nomiclabs/buidler-ethers": "^2.0.0",
-    "@nomiclabs/buidler-truffle5": "^1.3.4",
-    "@nomiclabs/buidler-waffle": "^2.0.0",
-    "@nomiclabs/buidler-web3": "^1.3.4",
-    "chai": "^4.2.0",
-    "dotenv": "^8.2.0",
-    "ethereum-waffle": "^3.0.0",
-    "ethers": "^5.0.14",
-    "solidity-coverage": "^0.7.13",
-    "truffle-hdwallet-provider": "^1.0.17",
-    "truffle-plugin-verify": "^0.4.0",
-    "web3": "^1.3.0"
-  },
-  "license": "MIT"
+    "truffle-plugin-verify": "^0.5.11",
+    "dotenv": "^8.2.0"
+  }
 }
