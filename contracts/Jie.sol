@@ -62,10 +62,7 @@ contract Jie is ERC20, Ownable {
      * - `recipient` cannot be the zero address.
      * - the caller must have a balance of at least `amount`.
      */
-    function transfer(address recipient, uint256 amount)
-        public
-        override
-        returns (bool)
+    function transfer(address recipient, uint256 amount) public returns (bool)
     {
         require(!lockedWallets[_msgSender()], "This wallet is locked");
         _transfer(_msgSender(), recipient, amount);
@@ -90,7 +87,7 @@ contract Jie is ERC20, Ownable {
         address sender,
         address recipient,
         uint256 amount
-    ) public override returns (bool) {
+    ) public returns (bool) {
         require(!lockedWallets[sender], "This sender is locked");
         _transfer(sender, recipient, amount);
         uint256 allowanced = allowance(sender, _msgSender());
