@@ -1,4 +1,5 @@
-pragma solidity 0.6.12;
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity 0.7.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -62,7 +63,7 @@ contract Jie is ERC20, Ownable {
      * - `recipient` cannot be the zero address.
      * - the caller must have a balance of at least `amount`.
      */
-    function transfer(address recipient, uint256 amount) public returns (bool)
+    function transfer(address recipient, uint256 amount) public override returns (bool)
     {
         require(!lockedWallets[_msgSender()], "This wallet is locked");
         _transfer(_msgSender(), recipient, amount);
@@ -87,7 +88,7 @@ contract Jie is ERC20, Ownable {
         address sender,
         address recipient,
         uint256 amount
-    ) public returns (bool) {
+    ) public override returns (bool) {
         require(!lockedWallets[sender], "This sender is locked");
         _transfer(sender, recipient, amount);
         uint256 allowanced = allowance(sender, _msgSender());

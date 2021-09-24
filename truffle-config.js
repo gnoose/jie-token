@@ -23,7 +23,6 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
-
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -54,7 +53,7 @@ module.exports = {
       network_id: "*",
     },
     ropsten: {
-      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://ropsten.infura.io/v3/${process.env.INFURA_KEY}`),
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://ropsten.infura.io/v3/${process.env.INFURA_ID}`),
       network_id: 3,
       gas: 550000,
     },
@@ -76,14 +75,13 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.6.12",    // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.7.0",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       settings: {          // See the solidity docs for advice about optimization and evmVersion
        optimizer: {
          enabled: false,
          runs: 200
-       },
-       evmVersion: "singapore"
+       }
       }
     }
   },
