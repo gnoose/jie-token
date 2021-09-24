@@ -39,7 +39,7 @@ module.exports = {
     'truffle-contract-size'
   ],
   api_keys:{
-    bscscan: process.env["INFURA_KEY "]
+    bscscan: process.env.INFURA_KEY
   },
 
   networks: {
@@ -54,7 +54,7 @@ module.exports = {
       network_id: "*",
     },
     ropsten: {
-      provider: () => new HDWalletProvider(process.env["MNEMONIC "], `https://ropsten.infura.io/v3/${process.env["INFURA_KEY "]}`),
+      provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://ropsten.infura.io/v3/${process.env.INFURA_KEY}`),
       network_id: 3,
       gas: 550000,
     },
