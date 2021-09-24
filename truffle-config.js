@@ -38,7 +38,7 @@ module.exports = {
     'truffle-contract-size'
   ],
   api_keys:{
-    bscscan: process.env.INFURA_KEY
+	  etherscan: process.env.API_KEY
   },
 
   networks: {
@@ -55,7 +55,6 @@ module.exports = {
     ropsten: {
       provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://ropsten.infura.io/v3/${process.env.INFURA_ID}`),
       network_id: 3,
-      gas: 550000,
     },
     testnet: {
       provider: () => new HDWalletProvider(process.env.MNEMONIC, 'https://data-seed-prebsc-2-s1.binance.org:8545'),
